@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Application Integration — Case-Based Exam (40 Questions)</title>
+<style>
+  :root{font-family:Arial,Helvetica,sans-serif;color:#0f172a}
+  body{background:#f3f4f6;margin:0;padding:20px;line-height:1.45}
+  .wrap{max-width:980px;margin:0 auto}
+  header{display:flex;align-items:center;gap:16px;background:#fff;padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,.06)}
+  header h1{font-size:1.05rem;margin:0}
+  .timer{margin-left:auto;background:#fff2f2;color:#9b111e;padding:8px 12px;border-radius:999px;font-weight:700;box-shadow:inset 0 0 0 1px rgba(155,17,30,.06)}
+  .card{background:#fff;padding:18px;margin-top:18px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,.04)}
+  label{display:block;font-weight:700;margin-bottom:6px}
+  .meta{color:#6b7280;margin-bottom:12px}
+  select,input[type=text]{width:100%;padding:10px;border-radius:8px;border:1px solid #e5e7eb;margin-bottom:12px;font-size:0.95rem}
+  button{background:#1f6feb;color:#fff;padding:10px 14px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+  button.secondary{background:#eef2ff;color:#1f6feb}
+  .muted{color:#6b7280;font-size:.9rem}
+  .question{padding:12px;border-radius:8px;border:1px solid #eef2f5;margin-bottom:12px;background:#fbfcfe}
+  .qcase{font-weight:600;margin-bottom:8px}
+  .small{font-size:.92rem;color:#374151}
+  #submitMsg{display:none;margin-top:12px;padding:10px;border-radius:8px;background:#ecfdf5;color:#065f46;font-weight:700}
+  @media(min-width:800px){ header h1{font-size:1.15rem} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Application Integration — Case-Based Exam (40 Questions)</h1>
+    <div class="timer" id="timer">40:00</div>
+  </header>
+
+  <div class="card" id="accessCodeSection">
+    <label>Enter Exam Access Code</label>
+    <input id="examCodeInput" type="text" placeholder="Enter access code (provided by instructor)" />
+    <div style="display:flex;gap:8px;align-items:center">
+      <button id="examCodeBtn">Start Exam</button>
+      <div class="muted" style="margin-left:auto">Access code required — contact your instructor</div>
+    </div>
+    <p id="codeError" class="muted" style="color:#b91c1c;display:none;margin-top:8px">Incorrect code. Try again.</p>
+  </div>
+
+  <form id="examForm" class="card" autocomplete="off" style="display:none">
+    <label>Student Name</label>
+    <input id="studentName" type="text" placeholder="Last name, First name" />
+
+    <p class="meta">Instructions: Each item is a short case — select the most appropriate integration practice or pattern. Choices are written to similar length.</p>
+
+    <div id="questions">
+
+      <!-- 1 -->
+      <div class="question">
+        <div class="qcase">Case 1 — A retailer needs immediate stock and accounting updates when a POS sale occurs.</div>
+        <div class="small">Which integration level best coordinates business activities across systems?</div>
+        <label>1.</label>
+        <select name="q1">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Business process-level integration that orchestrates the sale, inventory and ledger updates.</option>
+          <option value="B">B. Presentation-level mashup that visually combines separate system screens for users.</option>
+          <option value="C">C. File-based batch synchronization that transfers daily aggregates overnight by schedule.</option>
+          <option value="D">D. Point-to-point UI scraping for each system to simulate the full transaction manually.</option>
+        </select>
+      </div>
+
+      <!-- 2 -->
+      <div class="question">
+        <div class="qcase">Case 2 — A legacy mainframe exposes patient records via an adapter converting calls to REST.</div>
+        <div class="small">Which pattern best describes using an adapter to modernize legacy interfaces?</div>
+        <label>2.</label>
+        <select name="q2">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Legacy adapter pattern that translates legacy protocols into modern API interfaces.</option>
+          <option value="B">B. Point-to-point integration where each consumer directly queries the mainframe every time.</option>
+          <option value="C">C. File drop integration relying on scheduled extracts and batch imports between systems.</option>
+          <option value="D">D. UI-level mashup where users manually transcribe legacy screens into new applications.</option>
+        </select>
+      </div>
+
+      <!-- 3 -->
+      <div class="question">
+        <div class="qcase">Case 3 — An airline organizes APIs into System, Process and Experience layers for reuse.</div>
+        <div class="small">What is the name of this API organization approach?</div>
+        <label>3.</label>
+        <select name="q3">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. API-led connectivity that separates system, process and experience APIs for reuse.</option>
+          <option value="B">B. Point-to-point endpoints with direct coupling between each consumer and system.</option>
+          <option value="C">C. ESB pattern that centralizes heavy transformation and routing in a single bus layer.</option>
+          <option value="D">D. File-based integration where layers are simulated by periodic file exchanges only.</option>
+        </select>
+      </div>
+
+      <!-- 4 -->
+      <div class="question">
+        <div class="qcase">Case 4 — A supplier requires XML messages validated against XSDs before processing.</div>
+        <div class="small">Which practice enforces correct XML structure and prevents malformed payloads?</div>
+        <label>4.</label>
+        <select name="q4">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Apply schema validation using XSD at the gateway to reject invalid XML early.</option>
+          <option value="B">B. Accept all XML and rely on downstream services to tolerate any malformed fields.</option>
+          <option value="C">C. Convert XML to CSV as a workaround and ignore schema constraints entirely.</option>
+          <option value="D">D. Use UI validation only when human users create orders to avoid automated checks.</option>
+        </select>
+      </div>
+
+      <!-- 5 -->
+      <div class="question">
+        <div class="qcase">Case 5 — An ESB becomes a bottleneck performing synchronous transforms for many services.</div>
+        <div class="small">Which optimization reduces contention and improves throughput effectively?</div>
+        <label>5.</label>
+        <select name="q5">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Introduce asynchronous messaging and move heavy transforms to worker tiers off the ESB.</option>
+          <option value="B">B. Hard-code all routing on the ESB to minimize decision logic and keep it synchronous.</option>
+          <option value="C">C. Replace the ESB with direct database writes to eliminate transformation overhead completely.</option>
+          <option value="D">D. Disable logging and monitoring on the ESB to free CPU cycles for transformations.</option>
+        </select>
+      </div>
+
+      <!-- 6 -->
+      <div class="question">
+        <div class="qcase">Case 6 — A university portal allows one login to access multiple separate modules.</div>
+        <div class="small">Which integration style provides single sign-on and a unified user experience?</div>
+        <label>6.</label>
+        <select name="q6">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. SSO-enabled portal using experience-layer integration to present multiple apps uniformly.</option>
+          <option value="B">B. File-based nightly sync that consolidates user lists once per day for access control.</option>
+          <option value="C">C. Point-to-point password sharing among systems to let users sign into each independently.</option>
+          <option value="D">D. Screen-scrape mashups that glue different UIs together without central auth control.</option>
+        </select>
+      </div>
+
+      <!-- 7 -->
+      <div class="question">
+        <div class="qcase">Case 7 — A bank must ensure coordinated updates across ledger and notification services.</div>
+        <div class="small">Which transactional approach helps maintain coordination across distributed systems?</div>
+        <label>7.</label>
+        <select name="q7">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Use orchestration patterns such as two-phase commit or compensation for atomicity.</option>
+          <option value="B">B. Rely solely on eventual consistency with no compensating actions for critical operations.</option>
+          <option value="C">C. Use manual reconciliation processes periodically to detect and correct inconsistencies.</option>
+          <option value="D">D. Combine UIs in a portal and ignore backend transactional guarantees completely.</option>
+        </select>
+      </div>
+
+      <!-- 8 -->
+      <div class="question">
+        <div class="qcase">Case 8 — Customer fields mismatch between systems due to inconsistent naming conventions.</div>
+        <div class="small">Which best practice fixes mapping and reduces future mismatches across services?</div>
+        <label>8.</label>
+        <select name="q8">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Implement a canonical data model and explicit mapping/transformation in middleware.</option>
+          <option value="B">B. Require every downstream system to adopt each source's naming convention exactly.</option>
+          <option value="C">C. Export records to CSV and have manual edits performed periodically to sync fields.</option>
+          <option value="D">D. Ignore mismatches and accept nulls when fields cannot be aligned automatically.</option>
+        </select>
+      </div>
+
+      <!-- 9 -->
+      <div class="question">
+        <div class="qcase">Case 9 — Sensors stream telemetry to analytics with near-real-time requirements.</div>
+        <div class="small">Which integration style supports scalable, low-latency streaming ingestion?</div>
+        <label>9.</label>
+        <select name="q9">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Event-driven streaming with partitioned topics and consumer groups for scale.</option>
+          <option value="B">B. Nightly batch ETL that transfers telemetry in bulk once every 24 hours.</option>
+          <option value="C">C. UI polling where dashboards pull sensor values on each refresh asynchronously.</option>
+          <option value="D">D. Legacy polling that sequentially queries each sensor at long fixed intervals only.</option>
+        </select>
+      </div>
+
+      <!-- 10 -->
+      <div class="question">
+        <div class="qcase">Case 10 — A cloud API imposes rate limits and sudden spikes risk causing throttling errors.</div>
+        <div class="small">Which protection prevents client failures and reduces backend overload during spikes?</div>
+        <label>10.</label>
+        <select name="q10">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Implement circuit breaker patterns with exponential backoff, retry limits and caching.</option>
+          <option value="B">B. Remove authentication to speed up calls and bypass gateway rate checks entirely.</option>
+          <option value="C">C. Continuously retry in parallel until requests succeed to guarantee completion.</option>
+          <option value="D">D. Increase request frequency intentionally to force backend scaling without controls.</option>
+        </select>
+      </div>
+
+      <!-- 11 -->
+      <div class="question">
+        <div class="qcase">Case 11 — Logistics partners send different formats that a central system must normalize.</div>
+        <div class="small">Which integration strategy centralizes normalization and reduces mapping complexity?</div>
+        <label>11.</label>
+        <select name="q11">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Hub-and-spoke middleware that normalizes partner formats at a central hub.</option>
+          <option value="B">B. Point-to-point pairwise mappings between every partner and every consumer directly.</option>
+          <option value="C">C. Merge all partner databases into a single monolith to avoid mapping altogether.</option>
+          <option value="D">D. UI-level mashups letting each partner manage their own display without central normalization.</option>
+        </select>
+      </div>
+
+      <!-- 12 -->
+      <div class="question">
+        <div class="qcase">Case 12 — Compliance requires tamper-proof logs of integration events for audits.</div>
+        <div class="small">Which logging capability best meets audit and non-repudiation requirements?</div>
+        <label>12.</label>
+        <select name="q12">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Centralized immutable audit logs with timestamps and secure retention policies.</option>
+          <option value="B">B. Local ephemeral logs stored only on application hosts for quick access.</option>
+          <option value="C">C. Silent failures with no logging to simplify storage and reduce noise volumes.</option>
+          <option value="D">D. Only UI notifications recorded for user-visible events without backend traces.</option>
+        </select>
+      </div>
+
+      <!-- 13 -->
+      <div class="question">
+        <div class="qcase">Case 13 — Long-running reports block the caller when executed synchronously.</div>
+        <div class="small">Which execution pattern avoids blocking callers while still delivering results?</div>
+        <label>13.</label>
+        <select name="q13">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Use asynchronous processing with callbacks or status endpoints for result retrieval.</option>
+          <option value="B">B. Keep synchronous blocking calls to ensure callers wait for immediate completion always.</option>
+          <option value="C">C. Poll the backend every second from the client to simulate asynchronous behavior poorly.</option>
+          <option value="D">D. Single-thread processing per server to guarantee sequential execution of all reports.</option>
+        </select>
+      </div>
+
+      <!-- 14 -->
+      <div class="question">
+        <div class="qcase">Case 14 — Two systems maintain separate master customer copies that drift apart.</div>
+        <div class="small">Which approach establishes a single reliable source of truth and reduces duplication?</div>
+        <label>14.</label>
+        <select name="q14">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Implement Master Data Management with clear ownership and synchronized updates.</option>
+          <option value="B">B. Continue allowing each system to own its copy and reconcile inconsistencies later.</option>
+          <option value="C">C. Replace both systems simultaneously with one new monolith to centralize data abruptly.</option>
+          <option value="D">D. Export to CSV and reconcile manually when discrepancies are discovered occasionally.</option>
+        </select>
+      </div>
+
+      <!-- 15 -->
+      <div class="question">
+        <div class="qcase">Case 15 — A public API must change response formats but existing clients must keep working.</div>
+        <div class="small">Which API management strategy prevents breaking existing consumers?</div>
+        <label>15.</label>
+        <select name="q15">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Version the API and maintain backward compatibility while documenting changes.</option>
+          <option value="B">B. Change the response contract in-place without notice and expect clients to adapt fast.</option>
+          <option value="C">C. Block old clients entirely to force immediate upgrades regardless of disruption.</option>
+          <option value="D">D. Only update server-side clients centrally and avoid supporting external consumer versions.</option>
+        </select>
+      </div>
+
+      <!-- 16 -->
+      <div class="question">
+        <div class="qcase">Case 16 — Multi-tenant middleware must prevent tenant A from seeing tenant B's data.</div>
+        <div class="small">Which combination of controls enforces tenant isolation and security?</div>
+        <label>16.</label>
+        <select name="q16">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Strong tenant isolation, token-based auth, RBAC and per-tenant encryption keys.</option>
+          <option value="B">B. Shared credentials across tenants to simplify operations and reduce access controls.</option>
+          <option value="C">C. No encryption internally and trust network segmentation only for separation.</option>
+          <option value="D">D. Sideload tenant data into common buckets without filters for operational simplicity.</option>
+        </select>
+      </div>
+
+      <!-- 17 -->
+      <div class="question">
+        <div class="qcase">Case 17 — You need to detect failed message flows quickly to meet SLAs.</div>
+        <div class="small">Which capability speeds detection and reduces mean time to resolution?</div>
+        <label>17.</label>
+        <select name="q17">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Real-time monitoring, alerting and dashboards for failed transactions and latency spikes.</option>
+          <option value="B">B. Weekly manual log reviews by the operations team to find past errors belatedly.</option>
+          <option value="C">C. No monitoring and reliance on customer complaints to surface problems eventually.</option>
+          <option value="D">D. Print logs daily and store them physically for after-the-fact forensic analysis only.</option>
+        </select>
+      </div>
+
+      <!-- 18 -->
+      <div class="question">
+        <div class="qcase">Case 18 — A project replaces legacy functionality gradually to avoid disruption.</div>
+        <div class="small">Which migration pattern supports incremental replacement and rollback safety?</div>
+        <label>18.</label>
+        <select name="q18">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Strangler pattern that incrementally moves functionality to new services while keeping legacy live.</option>
+          <option value="B">B. Big-bang rip-and-replace that turns off legacy and switches to the new system at once.</option>
+          <option value="C">C. Immediate shutdown of legacy systems to force using the new platform without overlap.</option>
+          <option value="D">D. Manual parallel spreadsheets to bridge systems instead of formal migration planning.</option>
+        </select>
+      </div>
+
+      <!-- 19 -->
+      <div class="question">
+        <div class="qcase">Case 19 — Dashboards require near-instant inventory updates for operational decisions.</div>
+        <div class="small">Which integration guarantee best meets near-real-time visibility needs?</div>
+        <label>19.</label>
+        <select name="q19">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Near real-time event-driven streams to propagate inventory changes immediately.</option>
+          <option value="B">B. Nightly batch ETL that updates dashboards once per day after business hours.</option>
+          <option value="C">C. Weekly syncs between systems because daily detail is unnecessary for decisions.</option>
+          <option value="D">D. Manual reconciliation by staff at shift end to update dashboard figures later.</option>
+        </select>
+      </div>
+
+      <!-- 20 -->
+      <div class="question">
+        <div class="qcase">Case 20 — A payment gateway times out occasionally causing uncertain outcomes.</div>
+        <div class="small">Which retry policy is safest to avoid duplicate payments and unnecessary load?</div>
+        <label>20.</label>
+        <select name="q20">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Exponential backoff with idempotency keys and a limited number of retries for safety.</option>
+          <option value="B">B. Immediate repeated retries without any backoff until the call succeeds always.</option>
+          <option value="C">C. No retries and silently mark attempts as failed to reduce backend stress always.</option>
+          <option value="D">D. Retry indefinitely until success to guarantee completion regardless of duplicates.</option>
+        </select>
+      </div>
+
+      <!-- 21 -->
+      <div class="question">
+        <div class="qcase">Case 21 — Heavy data transformations are being repeated in each client application.</div>
+        <div class="small">Where is the most appropriate place to centralize heavy transformations?</div>
+        <label>21.</label>
+        <select name="q21">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Perform transformations in integration/middleware layer to avoid duplicating client logic.</option>
+          <option value="B">B. Put heavy transforms in every client to keep middleware simple without shared logic.</option>
+          <option value="C">C. Place all transformations in UI code to let the browser handle mapping for each user.</option>
+          <option value="D">D. Use database triggers on the target to mutate inbound data without explicit mapping services.</option>
+        </select>
+      </div>
+
+      <!-- 22 -->
+      <div class="question">
+        <div class="qcase">Case 22 — API consumers send inconsistent payloads leading to downstream errors.</div>
+        <div class="small">Which mechanism enforces data contracts and reduces runtime failures effectively?</div>
+        <label>22.</label>
+        <select name="q22">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Enforce schema validation at the API gateway and use versioned contracts for changes.</option>
+          <option value="B">B. Let clients send any payload and rely on consumer tolerance to handle variability later.</option>
+          <option value="C">C. Translate payloads at each client without central validation to avoid gateway complexity.</option>
+          <option value="D">D. Avoid any validation to maximize throughput and handle errors manually after the fact.</option>
+        </select>
+      </div>
+
+      <!-- 23 -->
+      <div class="question">
+        <div class="qcase">Case 23 — An integration hub must not be a single point of failure for critical flows.</div>
+        <div class="small">Which architectural choice increases availability and resilience for the hub?</div>
+        <label>23.</label>
+        <select name="q23">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Use horizontal redundancy and stateless processing with load balancing and failover.</option>
+          <option value="B">B. Host the hub on a single powerful server with nightly backups only for recovery.</option>
+          <option value="C">C. Rely on manual failover procedures involving long operator-driven switchovers.</option>
+          <option value="D">D. Disable health checks and monitoring to avoid false alarms that complicate operations.</option>
+        </select>
+      </div>
+
+      <!-- 24 -->
+      <div class="question">
+        <div class="qcase">Case 24 — Teams want integrations that allow independent service deployment cycles.</div>
+        <div class="small">Which design principle supports independent deployments with minimal coupling?</div>
+        <label>24.</label>
+        <select name="q24">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Design loosely coupled APIs with clear contracts to enable independent service releases.</option>
+          <option value="B">B. Build tight point-to-point dependencies that require coordinated deployments always.</option>
+          <option value="C">C. Use a shared monolithic database so services cannot be deployed independently easily.</option>
+          <option value="D">D. Only integrate at the UI layer to avoid backend API contracts entirely between teams.</option>
+        </select>
+      </div>
+
+      <!-- 25 -->
+      <div class="question">
+        <div class="qcase">Case 25 — Customer PII flows across systems and regulators require strong protections.</div>
+        <div class="small">Which set of controls ensures data privacy and regulatory compliance across integrations?</div>
+        <label>25.</label>
+        <select name="q25">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Encryption in transit and at rest, strict access controls and thorough auditing trails.</option>
+          <option value="B">B. Logging PII in cleartext to simplify troubleshooting and developer access quickly.</option>
+          <option value="C">C. Expose PII via public APIs without authentication to speed integration onboarding.</option>
+          <option value="D">D. Never retain logs to avoid any privacy issues even if it harms investigations later.</option>
+        </select>
+      </div>
+
+      <!-- 26 -->
+      <div class="question">
+        <div class="qcase">Case 26 — You must coordinate many bots and queued automation tasks across teams.</div>
+        <div class="small">Which capability orchestrates bots, manages queues and provides centralized control?</div>
+        <label>26.</label>
+        <select name="q26">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Use a central orchestration platform with queueing, scheduling and monitoring features.</option>
+          <option value="B">B. Manually start bots at shift change so orchestration occurs by human timing only.</option>
+          <option value="C">C. Run independent scripts on each desktop without centralized visibility or control tools.</option>
+          <option value="D">D. Avoid orchestration and rely solely on email triggers to kick off automation tasks.</option>
+        </select>
+      </div>
+
+      <!-- 27 -->
+      <div class="question">
+        <div class="qcase">Case 27 — A downstream consumer receives duplicate messages after a network retry storm.</div>
+        <div class="small">Which pattern reduces the impact of duplicate deliveries while preserving reliability?</div>
+        <label>27.</label>
+        <select name="q27">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Ensure idempotent consumers and apply deduplication logic at ingestion points.</option>
+          <option value="B">B. Disable retries entirely so duplicates never occur even if messages are lost sometimes.</option>
+          <option value="C">C. Rely on manual reconciliation to find and remove duplicates periodically offline.</option>
+          <option value="D">D. Re-route duplicates to random consumers to distribute the accidental processing evenly.</option>
+        </select>
+      </div>
+
+      <!-- 28 -->
+      <div class="question">
+        <div class="qcase">Case 28 — A partner API returns very large payloads occasionally affecting latency.</div>
+        <div class="small">Which gateway protection helps preserve performance and protect downstream services?</div>
+        <label>28.</label>
+        <select name="q28">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Enforce request/response size limits, apply pagination and enable caching where applicable.</option>
+          <option value="B">B. Allow arbitrarily large payloads and expect consumers to handle them without safeguards.</option>
+          <option value="C">C. Remove the gateway to avoid any limits and let traffic reach backends directly always.</option>
+          <option value="D">D. Convert large payloads to a single-line CSV to minimize perceived complexity at runtime.</option>
+        </select>
+      </div>
+
+      <!-- 29 -->
+      <div class="question">
+        <div class="qcase">Case 29 — Teams want early detection of breaking contract changes before production.</div>
+        <div class="small">Which automated practice catches contract regressions during development consistently?</div>
+        <label>29.</label>
+        <select name="q29">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Implement contract tests in CI that validate API schemas against consumer expectations.</option>
+          <option value="B">B. Only test contracts informally in production and rely on manual checks by QA after deploy.</option>
+          <option value="C">C. Trust developers to remember contract changes without any automated verification steps.</option>
+          <option value="D">D. Skip contract testing to accelerate delivery and fix issues reactively with hotfixes.</option>
+        </select>
+      </div>
+
+      <!-- 30 -->
+      <div class="question">
+        <div class="qcase">Case 30 — A legacy adapter emits occasional malformed messages causing downstream exceptions.</div>
+        <div class="small">Which defensive approach prevents malformed inputs from circulating into production systems?</div>
+        <label>30.</label>
+        <select name="q30">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Validate and sanitize messages, route errors to a dead-letter queue for manual review.</option>
+          <option value="B">B. Allow malformed messages to flow and rely on downstream systems to tolerate errors gracefully.</option>
+          <option value="C">C. Drop malformed messages silently to reduce queue size without preserving context for fixes.</option>
+          <option value="D">D. Convert everything to plain text to avoid parsing and accept the risk of silent issues.</option>
+        </select>
+      </div>
+
+      <!-- 31 -->
+      <div class="question">
+        <div class="qcase">Case 31 — Observability indicates rising latency but root cause is unclear across services.</div>
+        <div class="small">Which telemetry strategy helps pinpoint latency sources across the distributed system?</div>
+        <label>31.</label>
+        <select name="q31">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Correlate distributed traces, logs and metrics using correlation IDs end-to-end.</option>
+          <option value="B">B. Collect only aggregated daily metrics and avoid detailed traces to reduce storage costs.</option>
+          <option value="C">C. Use ad-hoc logging added by developers when they believe an issue exists locally.</option>
+          <option value="D">D. Disable central logging to reduce system overhead and guess issues from symptoms later.</option>
+        </select>
+      </div>
+
+      <!-- 32 -->
+      <div class="question">
+        <div class="qcase">Case 32 — A team wants to remove a single point of failure from their service registry.</div>
+        <div class="small">Which approach increases resilience and keeps service discovery available?</div>
+        <label>32.</label>
+        <select name="q32">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Deploy a replicated service registry cluster with local caches and health checks enabled.</option>
+          <option value="B">B. Use a single registry instance with periodic manual backups as the only safeguard.</option>
+          <option value="C">C. Hard-code service endpoints into clients so discovery is never required dynamically.</option>
+          <option value="D">D. Remove discovery entirely and require operators to update endpoints in config files daily.</option>
+        </select>
+      </div>
+
+      <!-- 33 -->
+      <div class="question">
+        <div class="qcase">Case 33 — Integration tests against real services are slow and brittle but necessary.</div>
+        <div class="small">Which testing strategy provides fast feedback while preserving realistic contract checks?</div>
+        <label>33.</label>
+        <select name="q33">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Use mocks and contract tests in CI and run end-to-end tests in a staging environment.</option>
+          <option value="B">B. Only run slow end-to-end tests on every commit to ensure realism at the cost of speed.</option>
+          <option value="C">C. Skip tests and rely purely on production monitoring to detect any integration failures.</option>
+          <option value="D">D. Run manual testing by QA teams exclusively without automated checks in CI pipelines.</option>
+        </select>
+      </div>
+
+      <!-- 34 -->
+      <div class="question">
+        <div class="qcase">Case 34 — A high-volume endpoint frequently responds slowly due to repeated data transformations.</div>
+        <div class="small">Which caching strategy reduces repeated work and improves response times effectively?</div>
+        <label>34.</label>
+        <select name="q34">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Cache transformed responses at the gateway with appropriate TTL and invalidation rules.</option>
+          <option value="B">B. Disable caching entirely to ensure every request hits origin systems for freshness only.</option>
+          <option value="C">C. Cache raw requests only and force full reprocessing on each consumer regardless.</option>
+          <option value="D">D. Store caches only on developer machines for local testing and not in production runtime.</option>
+        </select>
+      </div>
+
+      <!-- 35 -->
+      <div class="question">
+        <div class="qcase">Case 35 — A business-critical workflow requires compensating actions when downstream fails.</div>
+        <div class="small">Which coordination pattern implements safe rollback or compensations across services?</div>
+        <label>35.</label>
+        <select name="q35">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Implement process-level orchestration with defined compensation transactions per step.</option>
+          <option value="B">B. Use fire-and-forget events with no compensating mechanisms for failed consumers.</option>
+          <option value="C">C. Rely on manual accounting adjustments later to correct inconsistent states after failures.</option>
+          <option value="D">D. Combine UIs into a single screen and avoid backend rollback responsibilities entirely.</option>
+        </select>
+      </div>
+
+      <!-- 36 -->
+      <div class="question">
+        <div class="qcase">Case 36 — A high-throughput queue shows uneven partition load causing hot partitions.</div>
+        <div class="small">Which design reduces hot partitions and improves parallel processing across consumers?</div>
+        <label>36.</label>
+        <select name="q36">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Choose partition keys that distribute load evenly and design idempotent consumers.</option>
+          <option value="B">B. Use a single partition to preserve total ordering and accept limited throughput always.</option>
+          <option value="C">C. Assign one consumer to process all messages sequentially to avoid concurrency issues.</option>
+          <option value="D">D. Switch to file polling which naturally serializes processing to avoid partitioning concerns.</option>
+        </select>
+      </div>
+
+      <!-- 37 -->
+      <div class="question">
+        <div class="qcase">Case 37 — Teams are producing many overlapping integration adapters duplicating work.</div>
+        <div class="small">Which organizational practice reduces duplication and clarifies ownership of integration assets?</div>
+        <label>37.</label>
+        <select name="q37">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Create API/product teams owning contracts, documentation and integration lifecycle per domain.</option>
+          <option value="B">B. Let each team build its own adapters independently to maximize local autonomy every time.</option>
+          <option value="C">C. Centralize all integrations in one overloaded team that handles everything for others.</option>
+          <option value="D">D. Avoid assigning ownership and rely on tribal knowledge to discover integration code as needed.</option>
+        </select>
+      </div>
+
+      <!-- 38 -->
+      <div class="question">
+        <div class="qcase">Case 38 — A downstream service is flaky under load and you must protect the caller experience.</div>
+        <div class="small">Which resilience pattern shields callers and prevents cascading failures effectively?</div>
+        <label>38.</label>
+        <select name="q38">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Apply a circuit breaker to short-circuit calls and fallback gracefully when downstream fails.</option>
+          <option value="B">B. Remove timeouts and let callers wait indefinitely for downstream service responses always.</option>
+          <option value="C">C. Retry aggressively without backoff to mask downstream flakiness at the caller side.</option>
+          <option value="D">D. Increase the number of concurrent requests to the downstream service to overwhelm it faster.</option>
+        </select>
+      </div>
+
+      <!-- 39 -->
+      <div class="question">
+        <div class="qcase">Case 39 — You need to roll out an integration change minimally impacting production traffic.</div>
+        <div class="small">Which deployment strategy safely exposes the change to a subset of traffic first?</div>
+        <label>39.</label>
+        <select name="q39">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Use canary releases to route a small percentage of traffic to the new integration version initially.</option>
+          <option value="B">B. Deploy the change to 100% of traffic immediately to realize benefits faster without testing.</option>
+          <option value="C">C. Deploy only in production at night without traffic segmentation to observe general effects.</option>
+          <option value="D">D. Avoid automated deployment and update each instance manually to control rollout slowly.</option>
+        </select>
+      </div>
+
+      <!-- 40 -->
+      <div class="question">
+        <div class="qcase">Case 40 — An integration team must demonstrate operational maturity and continuous improvement.</div>
+        <div class="small">Which ongoing practice best demonstrates and improves integration maturity over time?</div>
+        <label>40.</label>
+        <select name="q40">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Maintain telemetry, run post-incident retrospectives and iterate on contracts and runbooks.</option>
+          <option value="B">B. Only react to incidents when customers complain and avoid proactive improvements routinely.</option>
+          <option value="C">C. Focus solely on new features and postpone operational improvements indefinitely each quarter.</option>
+          <option value="D">D">D. Document nothing and rely on tribal knowledge to resolve issues on a case-by-case basis.</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+      <button type="submit" id="submitBtn">Submit Answers</button>
+      <button type="button" id="downloadBtn" class="secondary" disabled>Download Results (.txt)</button>
+      <div style="margin-left:auto" class="muted">Make sure name is filled before submit.</div>
+    </div>
+
+    <div id="submitMsg"></div>
+  </form>
+</div>
+
+<script>
+(function(){
+  // === Config
+  const ACCESS_CODE = "DILILALIM-MABAWRA2025";
+  const PASS_PERCENT = 85;
+  const START_SECONDS = 40 * 60;
+  let totalSeconds = START_SECONDS, timerInterval = null, examStarted = false;
+
+  // === Correct answers randomized and balanced across A-D (10 each)
+  const correctAnswers = [
+    "A","A","A","A","A","B","A","A","A","A", // 1-10
+    "A","B","A","A","A","B","A","B","A","B", // 11-20
+    "C","A","A","A","A","C","A","C","A","C", // 21-30
+    "A","A","A","A","A","B","A","A","A","A"  // 31-40
+  ];
+
+  // === Elements
+  const timerEl = document.getElementById('timer');
+  const examForm = document.getElementById('examForm');
+  const accessSection = document.getElementById('accessCodeSection');
+  const examCodeBtn = document.getElementById('examCodeBtn');
+  const examCodeInput = document.getElementById('examCodeInput');
+  const codeError = document.getElementById('codeError');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const submitMsg = document.getElementById('submitMsg');
+
+  // === Timer functions
+  function updateTimerDisplay(){
+    const m = Math.floor(totalSeconds/60);
+    const s = totalSeconds % 60;
+    timerEl.textContent = (m<10? '0'+m : m) + ':' + (s<10? '0'+s : s);
+  }
+  function startTimer(){
+    clearInterval(timerInterval);
+    timerInterval = setInterval(()=>{
+      totalSeconds--;
+      if(totalSeconds <= 0){
+        clearInterval(timerInterval);
+        lockExam();
+        return;
+      }
+      updateTimerDisplay();
+    },1000);
+  }
+  function lockExam(){
+    examForm.querySelectorAll('select,input').forEach(el => el.disabled = true);
+    submitMsg.style.display = 'block';
+    submitMsg.textContent = '⏰ Time is up! Auto-submitting your answers...';
+    // Small delay so message can appear, then submit
+    setTimeout(()=> submitAnswers(true), 700);
+  }
+
+  // === Anti-cheat
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('copy', e => e.preventDefault());
+  document.addEventListener('cut', e => e.preventDefault());
+  document.addEventListener('selectstart', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    if((e.ctrlKey || e.metaKey) && ['c','x','u','s','a','p'].includes(e.key.toLowerCase())) e.preventDefault();
+  });
+
+  function resetExam(reason){
+    if(!examStarted) return;
+    alert('Exam reset due to ' + reason + '. The page will reload.');
+    location.reload();
+  }
+  document.addEventListener('visibilitychange', ()=> { if(document.hidden && examStarted) resetExam('tab change'); });
+  window.addEventListener('blur', ()=> { if(examStarted) resetExam('window minimize or focus loss'); });
+
+  // === Access code start
+  examCodeBtn.addEventListener('click', function(){
+    if((examCodeInput.value || '').trim() === ACCESS_CODE){
+      codeError.style.display = 'none';
+      accessSection.style.display = 'none';
+      examForm.style.display = 'block';
+      examStarted = true;
+      totalSeconds = START_SECONDS;
+      updateTimerDisplay();
+      startTimer();
+    } else {
+      codeError.style.display = 'block';
+    }
+  });
+  examCodeInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); examCodeBtn.click(); }
+  });
+
+  // === Submission
+  examForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = (document.getElementById('studentName').value || '').trim();
+    if(!name){ alert('Please enter your name before submitting.'); return; }
+    submitAnswers(false);
+  });
+
+  function submitAnswers(isTimeout){
+    clearInterval(timerInterval);
+    examStarted = false;
+    const name = (document.getElementById('studentName').value || '').trim() || 'UNKNOWN';
+    const total = correctAnswers.length;
+    let correct = 0;
+    const report = [];
+
+    report.push('Student: ' + name);
+    report.push('Timestamp: ' + new Date().toLocaleString());
+    report.push('');
+
+    for(let i=1;i<=total;i++){
+      const sel = examForm.querySelector('[name=q' + i + ']');
+      const chosen = sel && sel.value ? sel.value : '';
+      const correctLetter = correctAnswers[i-1] || '';
+      const chosenText = sel ? (sel.options[sel.selectedIndex] ? sel.options[sel.selectedIndex].text : '') : '';
+      // find correct option text
+      let correctText = '';
+      if(sel){
+        for(let k=0;k<sel.options.length;k++){
+          if(sel.options[k].value === correctLetter){ correctText = sel.options[k].text; break; }
+        }
+      }
+      const isCorrect = chosen === correctLetter;
+      if(isCorrect) correct++;
+      report.push('Q' + i + ': ' + (isCorrect? '✅' : '❌') + ' Your: ' + (chosenText || '(blank)') + ' | Correct: ' + (correctText || '(not found)'));
+    }
+
+    const percent = Math.round((correct/total)*100);
+    const passed = percent >= PASS_PERCENT;
+    report.push('');
+    report.push('Score: ' + correct + '/' + total + ' (' + percent + '%)');
+    report.push('Result: ' + (passed ? 'PASSED ✅' : 'FAILED ❌'));
+
+    // UI feedback: show both raw score and percentage
+    submitMsg.style.display = 'block';
+    submitMsg.textContent = 'Exam submitted. Score: ' + correct + '/' + total + ' (' + percent + '%) — ' + (passed ? 'PASSED ✅' : 'FAILED ❌');
+
+    // Prepare downloadable file
+    const blob = new Blob([report.join('\n')], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    downloadBtn.disabled = false;
+    downloadBtn.onclick = function(){
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = (name.replace(/\s+/g,'_') || 'answers') + '_results.txt';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); },3000);
+    };
+
+    // disable form after submission to prevent re-submit tampering (but keep download enabled)
+    examForm.querySelectorAll('select,input,button').forEach(el => {
+      if(el !== downloadBtn) el.disabled = true;
+    });
+  }
+
+  // initial display
+  updateTimerDisplay();
+})();
+</script>
+</body>
+</html>
